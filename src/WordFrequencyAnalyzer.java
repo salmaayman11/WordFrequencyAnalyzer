@@ -38,5 +38,9 @@ public class WordFrequencyAnalyzer {
         }
 
 
+        System.out.println("\nTop 10 Most Frequent Words:");
+        for(Map.Entry<String, Integer> entry : topWords){
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
     }
 }
