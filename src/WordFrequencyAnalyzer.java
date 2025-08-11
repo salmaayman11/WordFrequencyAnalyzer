@@ -1,8 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class WordFrequencyAnalyzer {
     public static void main(String[] args) throws IOException {
@@ -29,5 +28,15 @@ public class WordFrequencyAnalyzer {
                 }
             }
         }
+
+        PriorityQueue<Map.Entry<String, Integer>> maxHeap = new PriorityQueue<>((a, b)-> b.getValue() - a.getValue());
+        maxHeap.addAll(wordFrequencies.entrySet());
+
+        List<Map.Entry<String, Integer>> topWords = new ArrayList<>();
+        for(int i = 1; i < 10 && !maxHeap.isEmpty(); i++){
+            topWords.add(maxHeap.poll());
+        }
+
+
     }
 }
