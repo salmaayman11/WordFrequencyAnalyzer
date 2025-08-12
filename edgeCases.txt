@@ -1,0 +1,14 @@
+Hello, hello! This is a test... A TEST. 
+Apples are sweet; apples are tasty. APPLES are healthy. 
+Banana banana banana BANANA banana banana.
+Orange orange ORANGE, orange... orange. 
+Grapes grapes grapes! Grape's sweet.
+123 456 789 numbers should be ignored.
+Special characters: @#$%^&*()_+=[]{}|;:'",<>?/ should be ignored.
+Multiple     spaces   here.
+Tabs		should	be	handled	too.
+Empty lines should not cause issues.
+
+MixedCaseWord mixedcaseword MIXEDCASEWORD.
+End-of-line punctuation? Works!
+apple... APPLE apple
