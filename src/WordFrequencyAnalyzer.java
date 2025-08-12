@@ -33,7 +33,7 @@ public class WordFrequencyAnalyzer {
         maxHeap.addAll(wordFrequencies.entrySet());
 
         List<Map.Entry<String, Integer>> topWords = new ArrayList<>();
-        for(int i = 1; i < 10 && !maxHeap.isEmpty(); i++){
+        for(int i = 0; i < 10 && !maxHeap.isEmpty(); i++){
             topWords.add(maxHeap.poll());
         }
 
@@ -42,5 +42,16 @@ public class WordFrequencyAnalyzer {
         for(Map.Entry<String, Integer> entry : topWords){
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
+
+        System.out.println("\nWord Frequencies Bar Chart:");
+        if(!topWords.isEmpty()){
+            int maxCount = topWords.get(0).getValue();
+            for(Map.Entry<String, Integer> entry : topWords){
+                int barLength = (int) ((entry.getValue() / (double) maxCount) * 50);
+                System.out.printf("%-10s | %s (%d)%n", entry.getKey(), "#".repeat(barLength), entry.getValue());
+            }
+        }
+
+
     }
 }
